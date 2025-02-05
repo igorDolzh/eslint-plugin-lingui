@@ -5,6 +5,7 @@ import * as noSingleVariablesToTranslateRule from './rules/no-single-variables-t
 import * as tCallInFunctionRule from './rules/t-call-in-function'
 import * as textRestrictionsRule from './rules/text-restrictions'
 import * as noTransInsideTransRule from './rules/no-trans-inside-trans'
+import * as noTCallInReactComponentRule from './rules/no-t-call-in-react-component'
 
 import { ESLint, Linter } from 'eslint'
 import { FlatConfig, RuleModule } from '@typescript-eslint/utils/ts-eslint'
@@ -17,6 +18,7 @@ const rules = {
   [tCallInFunctionRule.name]: tCallInFunctionRule.rule,
   [textRestrictionsRule.name]: textRestrictionsRule.rule,
   [noTransInsideTransRule.name]: noTransInsideTransRule.rule,
+  [noTCallInReactComponentRule.name]: noTCallInReactComponentRule.rule,
 }
 
 type RuleKey = keyof typeof rules
@@ -43,6 +45,7 @@ const recommendedRules: { [K in RuleKey as `lingui/${K}`]?: FlatConfig.RuleLevel
   'lingui/no-single-variables-to-translate': 'warn',
   'lingui/no-trans-inside-trans': 'warn',
   'lingui/no-expression-in-message': 'warn',
+  'lingui/no-t-call-in-react-component': 'warn',
 }
 
 // Assign configs here so we can reference `plugin`

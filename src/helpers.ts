@@ -47,11 +47,14 @@ export function isAllowedDOMAttr(tag: string, attr: string, attributeNames: stri
   return false
 }
 
-export function getNearestAncestor<Type>(node: any, type: string): Type | null {
+export function getNearestAncestor<Type extends TSESTree.AST_NODE_TYPES>(
+  node: TSESTree.Node,
+  type: Type,
+): (TSESTree.Node & { type: Type }) | null {
   let temp = node.parent
   while (temp) {
     if (temp.type === type) {
-      return temp as Type
+      return temp as any
     }
     temp = temp.parent
   }

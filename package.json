@@ -41,6 +41,7 @@
     "@types/jest": "^29.5.13",
     "@types/micromatch": "^4.0.9",
     "@types/node": "^20.3.3",
+    "@types/react": "^18.3.12",
     "@typescript-eslint/parser": "^8.0.0",
     "@typescript-eslint/rule-tester": "^8.0.0",
     "@typescript-eslint/scope-manager": "^8.0.0",
