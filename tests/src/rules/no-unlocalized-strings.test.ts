@@ -172,6 +172,30 @@ ruleTester.run(name, rule, {
       options: [{ useTsTypes: true }],
     },
     {
+      name: 'allows string literal in function parameter with union type with undefined + null',
+      code: `
+        function test(param: "a" | "b" | undefined | null) {}
+        test("a");
+      `,
+      options: [{ useTsTypes: true }],
+    },
+    {
+      name: 'allows string literal in function parameter with union type with numbers',
+      code: `
+        function test(param: "a" | "b" | 1000) {}
+        test("a");
+      `,
+      options: [{ useTsTypes: true }],
+    },
+    {
+      name: 'allows string literal in function parameter with union type with booleans',
+      code: `
+        function test(param: "a" | "b" | false) {}
+        test("a");
+      `,
+      options: [{ useTsTypes: true }],
+    },
+    {
       name: 'allows string literal in method parameter with union type',
       code: `
         class Test {
